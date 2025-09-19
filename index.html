@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple To-Do List</title>
+  <link rel="stylesheet" href="styling.css" />
+</head>
+<body>
+  <main class="app" role="main">
+    <h1>My To-Do List</h1>
+
+    <form id="task-form" class="task-form" aria-label="Add new task">
+      <input id="task-input" type="text" placeholder="Add a task..." aria-label="Task description" maxlength="200" />
+      <button id="add-btn" type="submit" aria-label="Add task">Add</button>
+    </form>
+
+    <section class="controls">
+      <div class="stats" id="stats" aria-live="polite">0 tasks</div>
+      <div class="buttons">
+        <button id="sort-toggle" class="small">Sort: Oldest → Newest</button>
+        <button id="clear-completed" class="small" title="Remove completed tasks">Clear completed</button>
+        <button id="clear-all" class="small destructive" title="Remove all tasks">Clear all</button>
+      </div>
+    </section>
+
+    <ul id="task-list" class="task-list" aria-label="Task list"></ul>
+
+    <section>
+      <h2>Task Log</h2>
+      <ul id="task-log-list"></ul>
+    </section>
+
+    <footer class="footer">
+      <small>Built with JavaScript • Tasks saved in your browser</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

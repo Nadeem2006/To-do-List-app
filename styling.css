@@ -1,0 +1,241 @@
+:root {
+  --bg-gradient: linear-gradient(135deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+  --card-bg: rgba(255, 255, 255, 0.15);
+  --text-color: #ffffff;
+  --accent: #ffde59;
+  --danger: #ff4d6d;
+  --success: #4ade80;
+  --radius: 20px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  color: var(--text-color);
+}
+
+.app {
+  width: 100%;
+  max-width: 720px;
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.task-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+#task-input {
+  flex: 1;
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.2);
+  color: var(--text-color);
+}
+
+#task-input::placeholder { color: rgba(255,255,255,0.7); }
+
+#add-btn {
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--accent);
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#add-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px var(--accent);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.stats {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button.small {
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button.small:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+button.small.destructive {
+  background: var(--danger);
+  color: #fff;
+}
+
+button.small:not(.destructive) {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+#sort-toggle {
+  background: #38bdf8;
+  color: #000;
+  font-weight: 600;
+}
+
+#sort-toggle:hover {
+  background: #0ea5e9;
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.1);
+  padding: 16px;
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.task:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.task-text {
+  font-size: 1rem;
+  flex: 1;
+  margin-left: 10px;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: rgba(255,255,255,0.6);
+}
+
+.task-date {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 4px;
+}
+
+.task-log {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+}
+
+.task-log h2 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: var(--accent);
+}
+
+#task-log-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#task-log-list li {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.9);
+  padding: 8px 12px;
+  border-left: 4px solid var(--accent);
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+}
+
+.checkbox {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checkbox.checked {
+  background: var(--success);
+  border-color: var(--success);
+  color: #fff;
+  box-shadow: 0 0 8px var(--success);
+}
+
+.action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  transition: 0.2s;
+  color: #fff;
+}
+
+.action-btn:hover { transform: scale(1.2); }
+
+.action-btn.delete { color: var(--danger); }
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+}
